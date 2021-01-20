@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AplikasiInformasiSekolah</string>
+    <string name="app_name">Mari Sekolah !</string>
+    <string name="login">Login</string>
+    <string name="guest">Guest</string>
 </resources>
