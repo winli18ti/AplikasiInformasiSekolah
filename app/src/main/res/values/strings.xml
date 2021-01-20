@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">AplikasiInformasiSekolah</string>
+    <string name="app_name">Aplikasi Informasi Sekolah</string>
+    <string name="berita">Berita</string>
+    <string name="cari_sekolah">Cari Sekolah</string>
+    <string name="tentang_kami">Tentang Kami</string>
+    <string name="guest_berita">Berita Terbaru</string>
+    <string name="judul_berita">Judul Berita</string>
+    <string name="waktu_berita">Waktu Berita</string>
+    <string name="nama_staf">Hans Anderson</string>
+    <string name="isi_berita">Politeknik Caltex Riau adalah kampus kita</string>
+    <string name="buka">Buka</string>
+    <string name="tutup">Tutup</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

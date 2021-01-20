@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/berita"
+            android:icon="@drawable/ic_berita"
+            android:title="@string/berita"/>
+
+        <item
+            android:id="@+id/cari_sekolah"
+            android:icon="@drawable/ic_cari"
+            android:title="@string/cari_sekolah"/>
+
+        <item
+            android:id="@+id/tentang_kami"
+            android:icon="@drawable/ic_about"
+            android:title="@string/tentang_kami"/>
+    </group>
+
+</menu>
