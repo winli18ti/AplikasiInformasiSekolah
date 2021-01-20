@@ -14,6 +14,7 @@ class GuestHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var guestBerita: GuestBeritaFragment
+    lateinit var guestSekolah: GuestSekolahFragment
     //tambahkan fragment dari menu di sini
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +40,17 @@ class GuestHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                     .commit()
             }
             R.id.cari_sekolah -> {
-
+                guestSekolah = GuestSekolahFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.guest_layout, guestSekolah)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
             R.id.tentang_kami -> {
+
+            }
+            R.id.login -> {
 
             }
         }

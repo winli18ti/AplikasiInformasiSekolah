@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="10dp"
+    app:cardPreventCornerOverlap="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_sekolah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/img_sekolah"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_nama_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/nama_sekolah"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/img_sekolah"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_isi_sekolah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/isi_sekolah"
+            app:layout_constraintStart_toEndOf="@+id/img_sekolah"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nama_sekolah"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
