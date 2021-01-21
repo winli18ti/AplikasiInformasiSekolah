@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigasi"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.winli.aplikasiinformasisekolah.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_guestHome"
+            app:destination="@id/guestHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.winli.aplikasiinformasisekolah.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_staffHome"
+            app:destination="@id/staffHome" />
+    </fragment>
+    <activity
+        android:id="@+id/guestHome"
+        android:name="com.winli.aplikasiinformasisekolah.GuestHome"
+        android:label="guest_home"
+        tools:layout="@layout/guest_home" />
+    <activity
+        android:id="@+id/staffHome"
+        android:name="com.winli.aplikasiinformasisekolah.StaffHome"
+        android:label="staff_home"
+        tools:layout="@layout/staff_home" />
+</navigation>

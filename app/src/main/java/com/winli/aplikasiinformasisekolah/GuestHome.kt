@@ -1,5 +1,6 @@
 package com.winli.aplikasiinformasisekolah
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -15,6 +16,7 @@ class GuestHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var guestBerita: GuestBeritaFragment
     lateinit var guestSekolah: GuestSekolahFragment
+    lateinit var tentangKami: TentangKamiFragment
     //tambahkan fragment dari menu di sini
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,13 @@ class GuestHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         guest_nav.setNavigationItemSelectedListener(this)
+        //halaman pertama
+        guestBerita = GuestBeritaFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.guest_layout, guestBerita)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -48,10 +57,15 @@ class GuestHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                     .commit()
             }
             R.id.tentang_kami -> {
-
+                tentangKami = TentangKamiFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.guest_layout, tentangKami)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
-            R.id.login -> {
-
+            R.id.logout -> {
+                this.finish()
             }
         }
         guest_drawer.closeDrawers()

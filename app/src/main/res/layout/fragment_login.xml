@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    tools:context=".LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="330dp"
@@ -50,7 +51,7 @@
             app:layout_constraintVertical_bias="0.183" />
 
         <Button
-            android:id="@+id/btn_guest"
+            android:id="@+id/btn_login"
             android:layout_width="259dp"
             android:layout_height="58dp"
             android:background="@drawable/button"
@@ -94,6 +95,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

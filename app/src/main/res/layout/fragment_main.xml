@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange">
-
+    android:background="@color/orange"
+    tools:context=".MainFragment">
 
     <TextView
         android:layout_width="294dp"
@@ -35,11 +35,11 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_guest"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:background="@drawable/button"
-        android:text="@string/login"
+        android:text="@string/guest"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -51,12 +51,12 @@
         app:layout_constraintVertical_bias="0.715" />
 
     <Button
-        android:id="@+id/btn_guest"
+        android:id="@+id/btn_halaman_login"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginBottom="92dp"
         android:background="@drawable/button"
-        android:text="@string/guest"
+        android:text="@string/login"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textStyle="bold"
