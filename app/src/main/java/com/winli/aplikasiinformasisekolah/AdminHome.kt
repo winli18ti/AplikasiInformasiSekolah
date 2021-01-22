@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.admin_home.*
 class AdminHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var toggle: ActionBarDrawerToggle
+    lateinit var adminSekolah: AdminTambahSekolahFragment
+    lateinit var adminStaff: AdminTambahStaffFragment
     //lateinit var guestBerita: GuestBeritaFragment
     //tambahkan fragment dari menu di sini
 
@@ -27,10 +29,34 @@ class AdminHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         admin_nav.setNavigationItemSelectedListener(this)
+
+        //halaman pertama
+        adminSekolah = AdminTambahSekolahFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.admin_layout, adminSekolah)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.admin_sekolah -> {
+                adminSekolah = AdminTambahSekolahFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.admin_layout, adminSekolah)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.admin_staff -> {
+                adminStaff = AdminTambahStaffFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.admin_layout, adminStaff)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
             R.id.logout -> {
                 this.finish()
             }

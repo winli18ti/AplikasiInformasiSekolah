@@ -4,6 +4,14 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/admin_sekolah"
+            android:icon="@drawable/ic_about"
+            android:title="@string/tambah_sekolah"/>
+        <item
+            android:id="@+id/admin_staff"
+            android:icon="@drawable/ic_about"
+            android:title="@string/tambah_staff"/>
+        <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_logout"
             android:title="@string/keluar"/>

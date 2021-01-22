@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.staff_home.*
 class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var toggle: ActionBarDrawerToggle
+    lateinit var staffBerita: StaffBeritaInputFragment
+    lateinit var staffProfil: StaffUbahProfilFragment
     //lateinit var guestBerita: GuestBeritaFragment
     //tambahkan fragment dari menu di sini
 
@@ -27,10 +29,34 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         staff_nav.setNavigationItemSelectedListener(this)
+
+        //halaman pertama
+        staffBerita = StaffBeritaInputFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.staff_layout, staffBerita)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.in_berita -> {
+                staffBerita = StaffBeritaInputFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.staff_layout, staffBerita)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.edt_profil -> {
+                staffProfil = StaffUbahProfilFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.staff_layout, staffProfil)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
             R.id.logout -> {
                 this.finish()
             }
