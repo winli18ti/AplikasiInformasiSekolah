@@ -24,6 +24,8 @@
     <string name="tambah_sekolah">Tambah Sekolah</string>
     <string name="in_berita">Input Berita</string>
     <string name="edt_profil">Edit Profil</string>
+    <string name="isi_tentangkami">Aplikasi Informasi Sekolah  merupakan sebuah aplikasi android
+        yang simple namun sangat bermanfaat bagi siswa/i dalam mencari sekolah  dan info terupdate.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
