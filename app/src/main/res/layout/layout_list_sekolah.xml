@@ -43,6 +43,24 @@
             app:layout_constraintStart_toEndOf="@+id/img_sekolah"
             app:layout_constraintTop_toBottomOf="@+id/txt_nama_sekolah"/>
 
+        <TextView
+            android:id="@+id/txt_isi_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/nama_sekolah"
+            app:layout_constraintStart_toEndOf="@+id/img_sekolah"
+            app:layout_constraintTop_toBottomOf="@+id/txt_isi_sekolah"/>
+
+        <TextView
+            android:id="@+id/txt_isi_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/nama_sekolah"
+            app:layout_constraintStart_toEndOf="@+id/img_sekolah"
+            app:layout_constraintTop_toBottomOf="@+id/txt_isi_x"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

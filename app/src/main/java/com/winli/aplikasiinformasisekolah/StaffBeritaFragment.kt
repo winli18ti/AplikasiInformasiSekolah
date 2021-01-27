@@ -8,36 +8,36 @@ import android.view.ViewGroup
 import android.widget.ListView
 import com.google.firebase.database.*
 
-class AdminStaffFragment : Fragment() {
+class StaffBeritaFragment : Fragment() {
 
     private lateinit var listData: ListView
     private lateinit var ref: DatabaseReference
-    private lateinit var staffList: MutableList<Staff>
+    private lateinit var beritaList: MutableList<Berita>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_admin_staff, container, false)
-        ref = FirebaseDatabase.getInstance().getReference("staff")
-        listData = view.findViewById(R.id.list_staff)
-        staffList = mutableListOf()
+        val view = inflater.inflate(R.layout.fragment_staff_berita, container, false)
+        ref = FirebaseDatabase.getInstance().getReference("berita")
+        listData = view.findViewById(R.id.list_berita)
+        beritaList = mutableListOf()
 
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
-                    staffList.clear()
+                    beritaList.clear()
                     for (s in snapshot.children) {
-                        val staff = s.getValue(Staff::class.java)
-                        if (staff != null) {
-                            staffList.add(staff)
+                        val berita = s.getValue(Berita::class.java)
+                        if (berita != null) {
+                            beritaList.add(berita)
                         }
                     }
 
                     val adapter = context?.let {
-                        StaffAdapter(
+                        BeritaAdapter(
                             it,
-                            R.layout.layout_list_staff, staffList)
+                            R.layout.layout_list_berita, beritaList)
                     }
                     listData.adapter = adapter
                 }
@@ -48,7 +48,6 @@ class AdminStaffFragment : Fragment() {
             }
         })
 
-        // Inflate the layout for this fragment
         return view
     }
 }

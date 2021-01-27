@@ -8,6 +8,10 @@
             android:icon="@drawable/ic_about"
             android:title="@string/in_berita"/>
         <item
+            android:id="@+id/staff_list_berita"
+            android:icon="@drawable/ic_about"
+            android:title="List Berita"/>
+        <item
             android:id="@+id/edt_profil"
             android:icon="@drawable/ic_about"
             android:title="@string/edt_profil"/>

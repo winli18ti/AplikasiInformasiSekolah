@@ -8,36 +8,36 @@ import android.view.ViewGroup
 import android.widget.ListView
 import com.google.firebase.database.*
 
-class AdminStaffFragment : Fragment() {
+class AdminSekolahFragment : Fragment() {
 
     private lateinit var listData: ListView
     private lateinit var ref: DatabaseReference
-    private lateinit var staffList: MutableList<Staff>
+    private lateinit var sekolahList: MutableList<Sekolah>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_admin_staff, container, false)
-        ref = FirebaseDatabase.getInstance().getReference("staff")
-        listData = view.findViewById(R.id.list_staff)
-        staffList = mutableListOf()
+        val view = inflater.inflate(R.layout.fragment_admin_sekolah, container, false)
+        ref = FirebaseDatabase.getInstance().getReference("sekolah")
+        listData = view.findViewById(R.id.list_sekolah)
+        sekolahList = mutableListOf()
 
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
-                    staffList.clear()
+                    sekolahList.clear()
                     for (s in snapshot.children) {
-                        val staff = s.getValue(Staff::class.java)
-                        if (staff != null) {
-                            staffList.add(staff)
+                        val sekolah = s.getValue(Sekolah::class.java)
+                        if (sekolah != null) {
+                            sekolahList.add(sekolah)
                         }
                     }
 
                     val adapter = context?.let {
-                        StaffAdapter(
+                        SekolahAdapter(
                             it,
-                            R.layout.layout_list_staff, staffList)
+                            R.layout.layout_list_sekolah, sekolahList)
                     }
                     listData.adapter = adapter
                 }
@@ -47,8 +47,6 @@ class AdminStaffFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
-
-        // Inflate the layout for this fragment
         return view
     }
 }

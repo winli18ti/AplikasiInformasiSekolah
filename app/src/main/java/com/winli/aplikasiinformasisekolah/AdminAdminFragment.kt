@@ -8,36 +8,36 @@ import android.view.ViewGroup
 import android.widget.ListView
 import com.google.firebase.database.*
 
-class AdminStaffFragment : Fragment() {
+class AdminAdminFragment : Fragment() {
 
     private lateinit var listData: ListView
     private lateinit var ref: DatabaseReference
-    private lateinit var staffList: MutableList<Staff>
+    private lateinit var adminList: MutableList<Admin>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_admin_staff, container, false)
-        ref = FirebaseDatabase.getInstance().getReference("staff")
-        listData = view.findViewById(R.id.list_staff)
-        staffList = mutableListOf()
+        val view = inflater.inflate(R.layout.fragment_admin_admin, container, false)
+        ref = FirebaseDatabase.getInstance().getReference("admin")
+        listData = view.findViewById(R.id.list_admin)
+        adminList = mutableListOf()
 
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
-                    staffList.clear()
-                    for (s in snapshot.children) {
-                        val staff = s.getValue(Staff::class.java)
-                        if (staff != null) {
-                            staffList.add(staff)
+                    adminList.clear()
+                    for (a in snapshot.children) {
+                        val admin = a.getValue(Admin::class.java)
+                        if (admin != null) {
+                            adminList.add(admin)
                         }
                     }
 
                     val adapter = context?.let {
-                        StaffAdapter(
+                        AdminAdapter(
                             it,
-                            R.layout.layout_list_staff, staffList)
+                            R.layout.layout_list_admin, adminList)
                     }
                     listData.adapter = adapter
                 }
@@ -47,8 +47,6 @@ class AdminStaffFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
-
-        // Inflate the layout for this fragment
         return view
     }
 }

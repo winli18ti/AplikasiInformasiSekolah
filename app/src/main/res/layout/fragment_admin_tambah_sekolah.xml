@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.754">
 
         <Button
-            android:id="@+id/btn_submit"
+            android:id="@+id/btn_tambah_sekolah"
             android:layout_width="259dp"
             android:layout_height="58dp"
             android:background="@drawable/button"
@@ -108,7 +108,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
+            android:id="@+id/et_gambar"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginTop="385dp"
@@ -121,7 +122,7 @@
             app:layout_constraintTop_toTopOf="parent"
             />
         <Button
-            android:id="@+id/btn_upload"
+            android:id="@+id/btn_upload_gambar"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginTop="385dp"

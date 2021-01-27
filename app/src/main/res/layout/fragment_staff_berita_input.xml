@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.754">
 
         <Button
-            android:id="@+id/btn_submit"
+            android:id="@+id/btn_tambah_berita"
             android:layout_width="259dp"
             android:layout_height="58dp"
             android:background="@drawable/button"
@@ -65,9 +65,25 @@
         <EditText
             android:id="@+id/et_isi"
             android:layout_width="295dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="125dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="100dp"
             android:hint="Isi Berita"
+            android:gravity="bottom"
+            android:imeOptions="actionGo"
+            android:inputType="textMultiLine"
+            android:textColor="#363A43"
+            android:textColorHint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_waktu"
+            android:layout_width="295dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="160dp"
+            android:hint="Isi Waktu"
             android:gravity="bottom"
             android:imeOptions="actionGo"
             android:inputType="textMultiLine"

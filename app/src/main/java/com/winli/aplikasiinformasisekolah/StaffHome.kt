@@ -15,6 +15,7 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var staffBerita: StaffBeritaInputFragment
+    lateinit var staffListBerita: StaffBeritaFragment
     lateinit var staffProfil: StaffUbahProfilFragment
     //lateinit var guestBerita: GuestBeritaFragment
     //tambahkan fragment dari menu di sini
@@ -46,6 +47,14 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.staff_layout, staffBerita)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.staff_list_berita -> {
+                staffListBerita = StaffBeritaFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.staff_layout, staffListBerita)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }

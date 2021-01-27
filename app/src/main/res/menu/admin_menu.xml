@@ -8,6 +8,10 @@
             android:icon="@drawable/ic_about"
             android:title="@string/tambah_sekolah"/>
         <item
+            android:id="@+id/admin_list_sekolah"
+            android:icon="@drawable/ic_about"
+            android:title="List Sekolah"/>
+        <item
             android:id="@+id/admin_staff"
             android:icon="@drawable/ic_about"
             android:title="@string/tambah_staff"/>
@@ -19,6 +23,10 @@
             android:id="@+id/admin_admin"
             android:icon="@drawable/ic_about"
             android:title="@string/tambah_admin"/>
+        <item
+            android:id="@+id/admin_list_admin"
+            android:icon="@drawable/ic_about"
+            android:title="List Admin"/>
         <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_logout"

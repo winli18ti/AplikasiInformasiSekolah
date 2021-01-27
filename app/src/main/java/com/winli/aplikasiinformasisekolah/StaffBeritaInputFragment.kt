@@ -5,55 +5,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.fragment_staff_berita_input.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [StaffBeritaInputFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class StaffBeritaInputFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var etName: EditText
+    private lateinit var etIsi: EditText
+    private lateinit var etWaktu: EditText
+    private lateinit var etGambar: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_staff_berita_input, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_staff_berita_input, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment StaffBeritaInputFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            StaffBeritaInputFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        etName = view.findViewById(R.id.et_name)
+        etIsi = view.findViewById(R.id.et_isi)
+        etWaktu = view.findViewById(R.id.et_waktu)
+        //etGambar = view.findViewById(R.id.et_gambar)
+
+        view.btn_tambah_berita.setOnClickListener{
+            insert()
+        }
+        return view
+    }
+    private fun insert(){
+        var ref: DatabaseReference = FirebaseDatabase.getInstance().getReference("berita")
+
+        val nama_berita = etName.text.toString().trim()
+        val isi = etIsi.text.toString()
+        val waktu = etWaktu.text.toString()
+        //val gambar = etGambar.text.toString()
+
+        if (nama_berita.isEmpty() or isi.isEmpty() or waktu.isEmpty()) {
+            Toast.makeText(context, "Data tidak boleh kosong", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
+                .show()
+            return
+        }
+
+        val id_berita = ref.push().key
+        val berita = Berita(id_berita!!, nama_berita, isi,waktu, "")
+        ref.child(id_berita).setValue(berita).addOnCompleteListener {
+            Toast.makeText(context, "Data berhasil ditambahkan", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
+                .show()
+        }
     }
 }

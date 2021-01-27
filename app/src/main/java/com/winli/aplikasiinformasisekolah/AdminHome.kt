@@ -15,9 +15,11 @@ class AdminHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var adminSekolah: AdminTambahSekolahFragment
+    lateinit var adminListSekolah: AdminSekolahFragment
     lateinit var adminStaff: AdminTambahStaffFragment
     lateinit var adminListStaff: AdminStaffFragment
     lateinit var adminAdmin: AdminTambahAdminFragment
+    lateinit var adminListAdmin: AdminAdminFragment
     //lateinit var guestBerita: GuestBeritaFragment
     //tambahkan fragment dari menu di sini
 
@@ -51,6 +53,14 @@ class AdminHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
+            R.id.admin_list_sekolah -> {
+                adminListSekolah = AdminSekolahFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.admin_layout, adminListSekolah)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
             R.id.admin_staff -> {
                 adminStaff = AdminTambahStaffFragment()
                 supportFragmentManager
@@ -72,6 +82,14 @@ class AdminHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.admin_layout, adminAdmin)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.admin_list_admin -> {
+                adminListAdmin = AdminAdminFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.admin_layout, adminListAdmin)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
