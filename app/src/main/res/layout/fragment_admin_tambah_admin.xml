@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".AdminTambahStaffFragment">
+    tools:context=".AdminTambahAdminFragment">
 
     <TextView
-        android:id="@+id/txt_admin_tambah_staff"
+        android:id="@+id/txt_admin_tambah_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tambah_staff"
+        android:text="@string/tambah_admin"
         android:layout_margin="20dp"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.754">
 
         <Button
-            android:id="@+id/btn_tambah_staff"
+            android:id="@+id/btn_tambah_admin"
             android:layout_width="259dp"
             android:layout_height="58dp"
             android:background="@drawable/button"
@@ -48,22 +48,7 @@
             app:layout_constraintVertical_bias="0.8" />
 
         <EditText
-            android:id="@+id/edt_nama_staff"
-            android:layout_width="295dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:hint="Nama Staff"
-            android:imeOptions="actionGo"
-            android:inputType="textCapWords"
-            android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edt_username_staff"
+            android:id="@+id/edt_username_admin"
             android:layout_width="295dp"
             android:layout_height="50dp"
             android:layout_marginTop="150dp"
@@ -78,7 +63,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edt_password_staff"
+            android:id="@+id/edt_password_admin"
             android:layout_width="295dp"
             android:layout_height="50dp"
             android:layout_marginTop="245dp"

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1058341688681",
+    "project_id": "aplikasiinformasisekolah",
+    "storage_bucket": "aplikasiinformasisekolah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058341688681:android:be0ab142a51997e90299f8",
+        "android_client_info": {
+          "package_name": "com.winli.aplikasiinformasisekolah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058341688681-t9i37u8l9ud5infftn2hq0j5qj1p752m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winli.aplikasiinformasisekolah",
+            "certificate_hash": "9f68d7122e5e19a57f45e72276a88f8c5de9af16"
+          }
+        },
+        {
+          "client_id": "1058341688681-5tuo9gla9d83b6mvgdf6a59e8up56k7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARgexLndj-m_thEIZJoBD35beyBbcj4U0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058341688681-5tuo9gla9d83b6mvgdf6a59e8up56k7c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_loginFragment_to_staffHome"
             app:destination="@id/staffHome" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminHome"
+            app:destination="@id/adminHome" />
     </fragment>
     <activity
         android:id="@+id/guestHome"
@@ -37,4 +40,9 @@
         android:name="com.winli.aplikasiinformasisekolah.StaffHome"
         android:label="staff_home"
         tools:layout="@layout/staff_home" />
+    <activity
+        android:id="@+id/adminHome"
+        android:name="com.winli.aplikasiinformasisekolah.AdminHome"
+        android:label="admin_home"
+        tools:layout="@layout/admin_home" />
 </navigation>
