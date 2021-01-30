@@ -16,6 +16,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_staff_berita_input.view.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class StaffBeritaInputFragment : Fragment() {
@@ -110,8 +112,12 @@ class StaffBeritaInputFragment : Fragment() {
             return
         }
 
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatted = current.format(formatter)
+
         val id_berita = ref.push().key
-        val berita = Berita(id_berita!!, nama_berita, isi, "Tanggal Hari Ini", randomKey)
+        val berita = Berita(id_berita!!, nama_berita, isi, formatted, randomKey)
         ref.child(id_berita).setValue(berita).addOnCompleteListener {
             Toast.makeText(context, "Data berhasil ditambahkan", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
                 .show()
