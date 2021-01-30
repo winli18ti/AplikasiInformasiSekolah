@@ -21,13 +21,13 @@
 
     <TextView
         android:id="@+id/txt_admin_tambah_admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="195dp"
+        android:layout_height="34dp"
         android:layout_margin="20dp"
         android:text="@string/tambah_admin"
         android:textColor="@android:color/white"
-        android:textSize="30dp"
-        android:textStyle="bold"
+        android:textSize="25sp"
+       
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -52,8 +52,8 @@
             android:background="@drawable/button"
             android:text="@string/submit"
             android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:textSize="17dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,15 +62,14 @@
 
         <ImageView
             android:id="@+id/img_username"
-            android:layout_width="59dp"
-            android:layout_height="59dp"
-            android:src="@drawable/ic_nama"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/ic_nama_staff"
             app:layout_constraintEnd_toStartOf="@+id/edt_username_admin"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.86"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.107" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edt_username_admin"
@@ -80,24 +79,25 @@
             android:layout_marginEnd="44dp"
             android:backgroundTint="@android:color/black"
             android:hint="Username"
+            android:textSize="15dp"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="#6E6E6E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/img_password"
-            android:layout_width="59dp"
-            android:layout_height="59dp"
-            android:src="@drawable/ic_password"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_pass"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/edt_password_admin"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.86"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_username"
-            app:layout_constraintVertical_bias="0.106" />
+            app:layout_constraintVertical_bias="0.187" />
 
         <EditText
             android:id="@+id/edt_password_admin"
@@ -106,11 +106,12 @@
             android:layout_marginTop="128dp"
             android:layout_marginEnd="44dp"
             android:backgroundTint="@android:color/black"
+            android:textSize="15dp"
             android:hint="Password"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="#6E6E6E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
