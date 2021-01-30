@@ -5,37 +5,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg_admin_tambah_admin"
     tools:context=".AdminTambahAdminFragment">
+
+    <ImageView
+        android:id="@+id/img_admin_tambah_admin"
+        android:layout_width="284dp"
+        android:layout_height="211dp"
+        android:src="@drawable/ic_admin_tambah_admin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txt_admin_tambah_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tambah_admin"
         android:layout_margin="20dp"
-        android:textSize="40sp"
+        android:text="@string/tambah_admin"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintVertical_bias="0.944" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="330dp"
-        android:layout_height="550dp"
-        android:background="@drawable/shape_login"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="484dp"
+        android:layout_height="430dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintVertical_bias="0.754">
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btn_tambah_admin"
-            android:layout_width="259dp"
-            android:layout_height="58dp"
+            android:layout_width="324dp"
+            android:layout_height="48dp"
             android:background="@drawable/button"
             android:text="@string/submit"
             android:textColor="@android:color/white"
@@ -45,36 +58,60 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintVertical_bias="0.659" />
+
+        <ImageView
+            android:id="@+id/img_username"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:src="@drawable/ic_nama"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edt_username_admin"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.107" />
 
         <EditText
             android:id="@+id/edt_username_admin"
             android:layout_width="295dp"
             android:layout_height="50dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="44dp"
+            android:backgroundTint="@android:color/black"
             android:hint="Username"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_password"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:src="@drawable/ic_password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edt_password_admin"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_username"
+            app:layout_constraintVertical_bias="0.106" />
 
         <EditText
             android:id="@+id/edt_password_admin"
             android:layout_width="295dp"
             android:layout_height="50dp"
-            android:layout_marginTop="245dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="44dp"
+            android:backgroundTint="@android:color/black"
             android:hint="Password"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,14 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     tools:context=".StaffUbahProfilFragment">
 
     <ImageView
         android:id="@+id/img_shape"
         android:layout_width="327dp"
         android:layout_height="58dp"
-        android:src="@drawable/shape_orangemuda"
+        android:src="@drawable/shape_hitam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
