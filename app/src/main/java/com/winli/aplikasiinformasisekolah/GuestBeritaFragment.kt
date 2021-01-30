@@ -20,7 +20,7 @@ class GuestBeritaFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_guest_berita, container, false)
         ref = FirebaseDatabase.getInstance().getReference("berita")
-        listData = view.findViewById(R.id.list_berita)
+        listData = view.findViewById(R.id.list_berita_guest)
         beritaList = mutableListOf()
 
         ref.addValueEventListener(object: ValueEventListener {

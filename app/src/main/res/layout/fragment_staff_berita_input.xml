@@ -94,36 +94,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="260dp"
-            android:text="Upload Gambar"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.13"
+        <ImageView
+            android:id="@+id/img_gambar_berita"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:contentDescription="Gambar Sekolah"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/et_waktu"/>
+
         <Button
-            android:id="@+id/btn_upload"
+            android:id="@+id/btn_upload_gambar_berita"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginTop="250dp"
             android:text="Upload"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <ImageView
-            android:id="@+id/img_view"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="320dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
