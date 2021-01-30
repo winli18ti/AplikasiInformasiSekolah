@@ -27,7 +27,7 @@
     <string name="isi_tentangkami">Aplikasi Informasi Sekolah  merupakan sebuah aplikasi android
         yang simple namun sangat bermanfaat bagi siswa/i dalam mencari sekolah  dan info terupdate.</string>
     <string name="tambah_admin">Tambah Admin</string>
-
+    <string name="daftar_staff">Daftar Staff</string>
     <string-array name="level">
         <item>Staff</item>
         <item>Admin</item>

@@ -5,7 +5,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/admin_sekolah"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_school"
             android:title="@string/tambah_sekolah"/>
         <item
             android:id="@+id/admin_staff"
@@ -13,11 +13,11 @@
             android:title="@string/tambah_staff"/>
         <item
             android:id="@+id/admin_list_staff"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_list_staff"
             android:title="List Staff"/>
         <item
             android:id="@+id/admin_admin"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_tambah_admin"
             android:title="@string/tambah_admin"/>
         <item
             android:id="@+id/logout"
