@@ -5,22 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     tools:context=".TentangKamiFragment">
-
 
     <ImageView
         android:id="@+id/img_shape"
         android:layout_width="319dp"
-        android:layout_height="60dp"
-        android:src="@drawable/shape_orangemuda"
+        android:layout_height="55dp"
+        android:src="@drawable/shape_hitam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/txt_about"
@@ -29,34 +27,34 @@
         android:fontFamily="sans-serif-medium"
         android:text="Tentang Kami"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/img_shape"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintVertical_bias="0.017" />
 
     <TextView
         android:id="@+id/txt_tentangkami"
-        android:layout_width="398dp"
-        android:layout_height="93dp"
-        android:layout_marginBottom="480dp"
+        android:layout_width="315dp"
+        android:layout_height="137dp"
+        android:layout_marginBottom="460dp"
         android:gravity="left"
         android:text="@string/isi_tentangkami"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <ImageView
         android:id="@+id/img_shape2"
         android:layout_width="319dp"
-        android:layout_height="60dp"
-        android:src="@drawable/shape_orangemuda"
+        android:layout_height="55dp"
+        android:src="@drawable/shape_hitam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.608"
@@ -67,15 +65,15 @@
 
     <TextView
         android:id="@+id/txt_hubungikami"
-        android:layout_width="297dp"
-        android:layout_height="49dp"
+        android:layout_width="296dp"
+        android:layout_height="42dp"
         android:fontFamily="sans-serif-medium"
         android:text="Hubungi Kami"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_shape2"
-        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/img_shape2"

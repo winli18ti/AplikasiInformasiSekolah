@@ -5,7 +5,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/in_berita"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_berita"
             android:title="@string/in_berita"/>
         <item
             android:id="@+id/staff_list_berita"

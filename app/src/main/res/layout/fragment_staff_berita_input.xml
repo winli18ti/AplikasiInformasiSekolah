@@ -4,27 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_staff_input_berita"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     tools:context=".StaffBeritaInputFragment">
-
-    <TextView
-        android:id="@+id/txt_staff_berita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/input_berita"
-        android:layout_margin="20dp"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="330dp"
         android:layout_height="550dp"
-        android:background="@drawable/shape_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -34,85 +20,101 @@
 
         <Button
             android:id="@+id/btn_tambah_berita"
-            android:layout_width="259dp"
-            android:layout_height="58dp"
+            android:layout_width="253dp"
+            android:layout_height="45dp"
             android:background="@drawable/button"
+            android:backgroundTint="@color/birutua"
             android:text="@string/submit"
             android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.91" />
+            app:layout_constraintVertical_bias="0.928" />
 
         <EditText
             android:id="@+id/et_name"
-            android:layout_width="295dp"
+            android:layout_width="255dp"
             android:layout_height="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="56dp"
+            android:backgroundTint="@android:color/black"
             android:hint="Judul Berita"
             android:imeOptions="actionGo"
+            android:textSize="15dp"
             android:inputType="textCapWords"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="#6E6E6E"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintHorizontal_bias="0.866"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_isi"
-            android:layout_width="295dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="100dp"
-            android:hint="Isi Berita"
-            android:gravity="bottom"
-            android:imeOptions="actionGo"
-            android:inputType="textMultiLine"
-            android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_waktu"
-            android:layout_width="295dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="160dp"
-            android:hint="Isi Waktu"
-            android:gravity="bottom"
-            android:imeOptions="actionGo"
-            android:inputType="textMultiLine"
-            android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/img_gambar_berita"
-            android:layout_width="100dp"
+            android:layout_width="255dp"
             android:layout_height="100dp"
-            android:layout_marginStart="20dp"
-            android:contentDescription="Gambar Sekolah"
+            android:layout_marginTop="124dp"
+            android:backgroundTint="@android:color/black"
+            android:gravity="bottom"
+            android:textSize="15dp"
+            android:hint="Isi Berita"
+            android:imeOptions="actionGo"
+            android:inputType="textMultiLine"
+            android:textColor="#363A43"
+            android:textColorHint="#6E6E6E"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.866"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_waktu"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_upload_gambar_berita"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginTop="250dp"
-            android:text="Upload"
+            android:text="Upload Gambar"
+            android:textSize="15dp"
+            android:background="@color/birutua"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_gambar_berita"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="320dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/logo_berita"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_berita"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/et_name"
+            app:layout_constraintHorizontal_bias="0.192"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.129" />
+
+        <ImageView
+            android:id="@+id/logo_isi_berita"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="324dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/et_isi"
+            app:layout_constraintHorizontal_bias="0.192"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_berita"
+            app:layout_constraintVertical_bias="0.987" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

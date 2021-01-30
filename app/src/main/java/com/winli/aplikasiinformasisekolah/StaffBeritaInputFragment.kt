@@ -22,7 +22,6 @@ class StaffBeritaInputFragment : Fragment() {
 
     private lateinit var etName: EditText
     private lateinit var etIsi: EditText
-    private lateinit var etWaktu: EditText
     private lateinit var imgGambarBerita: ImageView
     private lateinit var imageUri: Uri
     private lateinit var storage: FirebaseStorage
@@ -37,7 +36,6 @@ class StaffBeritaInputFragment : Fragment() {
 
         etName = view.findViewById(R.id.et_name)
         etIsi = view.findViewById(R.id.et_isi)
-        etWaktu = view.findViewById(R.id.et_waktu)
         imgGambarBerita = view.findViewById(R.id.img_gambar_berita)
 
         storage = FirebaseStorage.getInstance()
@@ -105,16 +103,15 @@ class StaffBeritaInputFragment : Fragment() {
 
         val nama_berita = etName.text.toString().trim()
         val isi = etIsi.text.toString()
-        val waktu = etWaktu.text.toString()
 
-        if (nama_berita.isEmpty() or isi.isEmpty() or waktu.isEmpty()) {
+        if (nama_berita.isEmpty() or isi.isEmpty()) {
             Toast.makeText(context, "Data tidak boleh kosong", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
                 .show()
             return
         }
 
         val id_berita = ref.push().key
-        val berita = Berita(id_berita!!, nama_berita, isi, waktu, randomKey)
+        val berita = Berita(id_berita!!, nama_berita, isi, "Tanggal Hari Ini", randomKey)
         ref.child(id_berita).setValue(berita).addOnCompleteListener {
             Toast.makeText(context, "Data berhasil ditambahkan", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
                 .show()

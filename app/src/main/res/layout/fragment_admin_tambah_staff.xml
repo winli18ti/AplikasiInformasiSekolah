@@ -5,92 +5,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg_admin_tambah_staff"
     tools:context=".AdminTambahStaffFragment">
 
-    <TextView
-        android:id="@+id/txt_admin_tambah_staff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tambah_staff"
-        android:layout_margin="20dp"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="330dp"
-        android:layout_height="550dp"
-        android:background="@drawable/shape_login"
+        android:layout_width="441dp"
+        android:layout_height="736dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintVertical_bias="0.754">
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent">
+
 
         <Button
             android:id="@+id/btn_tambah_staff"
-            android:layout_width="259dp"
-            android:layout_height="58dp"
+            android:layout_width="316dp"
+            android:layout_height="43dp"
             android:background="@drawable/button"
             android:text="@string/submit"
             android:textColor="@android:color/white"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.387"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintVertical_bias="0.938" />
+
 
         <EditText
             android:id="@+id/edt_nama_staff"
-            android:layout_width="295dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="296dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="300dp"
             android:hint="Nama Staff"
+            android:textSize="15dp"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
-            android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="#6E6E6E"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintHorizontal_bias="0.68"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@android:color/black"/>
+
+        <ImageView
+            android:id="@+id/img_nama_staff"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_nama_staff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edt_nama_staff"
+            app:layout_constraintHorizontal_bias="0.927"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
 
         <EditText
             android:id="@+id/edt_username_staff"
-            android:layout_width="295dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="150dp"
+            android:layout_width="301dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="432dp"
             android:hint="Username"
+            android:textSize="15dp"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="#6E6E6E"
+            android:backgroundTint="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintHorizontal_bias="0.724"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_username"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/ic_about"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edt_username_staff"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.638" />
+
+
+        <ImageView
+            android:id="@+id/img_password"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="3dp"
+            android:src="@drawable/ic_pass"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edt_password_staff"
+            app:layout_constraintHorizontal_bias="0.909"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.803" />
 
         <EditText
             android:id="@+id/edt_password_staff"
-            android:layout_width="295dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="245dp"
+            android:layout_width="297dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="544dp"
             android:hint="Password"
             android:imeOptions="actionGo"
             android:inputType="textCapWords"
+            android:textSize="15dp"
             android:textColor="#363A43"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="#6E6E6E"
+            android:backgroundTint="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintHorizontal_bias="0.724"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/txt_Admin_tambah_staff"
+            android:layout_width="295dp"
+            android:layout_height="44dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/tambah_staff"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/edt_nama_staff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.871" />
+
+        <ImageView
+            android:id="@+id/img_admin_tambah_staff"
+            android:layout_width="246dp"
+            android:layout_height="235dp"
+            android:src="@drawable/ic_admin_tambah_staff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
