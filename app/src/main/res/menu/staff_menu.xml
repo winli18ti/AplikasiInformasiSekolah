@@ -9,7 +9,7 @@
             android:title="@string/in_berita"/>
         <item
             android:id="@+id/staff_list_berita"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_list_staff"
             android:title="List Berita"/>
         <item
             android:id="@+id/edt_profil"

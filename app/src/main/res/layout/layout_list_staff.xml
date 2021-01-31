@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
+        android:background="@drawable/shape_list"
         android:foreground="?selectableItemBackground">
 
         <TextView
@@ -15,7 +16,8 @@
             android:layout_margin="10dp"
             android:text="Nama Staff"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="15dp"
+            android:textColor="#2E2E2E"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -25,6 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Username"
+            android:textSize="15dp"
+            android:textColor="#2E2E2E"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_nama_staff"/>
 
@@ -34,6 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Password"
+            android:textSize="15dp"
+            android:textColor="#2E2E2E"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_username_staff"/>
 
@@ -43,6 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Username"
+            android:textSize="15dp"
+            android:textColor="#2E2E2E"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_password_staff"/>
 
