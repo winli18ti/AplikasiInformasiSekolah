@@ -37,7 +37,7 @@
 
         <EditText
             android:id="@+id/edt_nama_staff"
-            android:layout_width="296dp"
+            android:layout_width="301dp"
             android:layout_height="57dp"
             android:layout_marginTop="300dp"
             android:hint="Nama Staff"
@@ -64,11 +64,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.45" />
 
+        <Spinner
+            android:id="@+id/spinner_tambah_staff"
+            android:layout_width="301dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="385dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="392dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.724"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/edt_username_staff"
             android:layout_width="301dp"
             android:layout_height="56dp"
-            android:layout_marginTop="432dp"
+            android:layout_marginTop="472dp"
             android:hint="Username"
             android:textSize="15dp"
             android:imeOptions="actionGo"
@@ -92,7 +105,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.638" />
+            app:layout_constraintVertical_bias="0.698" />
 
 
         <ImageView
