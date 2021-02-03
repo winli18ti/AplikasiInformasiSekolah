@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import java.util.*
 
-class StaffBeritaInputFragment : Fragment() {
+class StaffBeritaInputFragment(val idStaff: String) : Fragment() {
 
     private lateinit var etName: EditText
     private lateinit var etIsi: EditText
