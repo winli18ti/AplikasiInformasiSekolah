@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.FragmentTransaction
@@ -17,6 +18,7 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     lateinit var staffBerita: StaffBeritaInputFragment
     lateinit var staffListBerita: StaffBeritaFragment
     lateinit var staffProfil: StaffUbahProfilFragment
+    lateinit var idStaff: String
     //lateinit var guestBerita: GuestBeritaFragment
     //tambahkan fragment dari menu di sini
 
@@ -31,8 +33,10 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         staff_nav.setNavigationItemSelectedListener(this)
 
+        idStaff = getIntent().getExtras()?.getString("idStaff").toString()
+
         //halaman pertama
-        staffBerita = StaffBeritaInputFragment()
+        staffBerita = StaffBeritaInputFragment(idStaff)
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.staff_layout, staffBerita)
@@ -43,7 +47,7 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.in_berita -> {
-                staffBerita = StaffBeritaInputFragment()
+                staffBerita = StaffBeritaInputFragment(idStaff)
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.staff_layout, staffBerita)
@@ -51,7 +55,7 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                     .commit()
             }
             R.id.staff_list_berita -> {
-                staffListBerita = StaffBeritaFragment()
+                staffListBerita = StaffBeritaFragment(idStaff)
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.staff_layout, staffListBerita)
@@ -59,7 +63,7 @@ class StaffHome: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                     .commit()
             }
             R.id.edt_profil -> {
-                staffProfil = StaffUbahProfilFragment()
+                staffProfil = StaffUbahProfilFragment(idStaff)
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.staff_layout, staffProfil)

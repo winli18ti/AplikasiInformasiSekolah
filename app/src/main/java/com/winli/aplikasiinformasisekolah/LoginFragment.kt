@@ -5,16 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_login.view.*
 import com.google.firebase.database.*
-import android.widget.Spinner
-import android.widget.ArrayAdapter
-import android.widget.AdapterView
 
 class LoginFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private var level: String = "Staff"
+    private lateinit var refStaff: DatabaseReference
+    private lateinit var refAdmin: DatabaseReference
+    private lateinit var staffList: MutableList<Staff>
+    private lateinit var adminList: MutableList<Admin>
+    private lateinit var edtUsername: EditText
+    private lateinit var edtPassword: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +27,8 @@ class LoginFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
+        edtUsername = view.findViewById(R.id.edt_username)
+        edtPassword = view.findViewById(R.id.edt_password)
 
         val spnLevel: Spinner = view.findViewById(R.id.spn_level)
 
@@ -42,7 +49,53 @@ class LoginFragment : Fragment(), AdapterView.OnItemSelectedListener {
             login()
         }
 
+        getData()
+
         return view
+    }
+
+    private fun getData() {
+        refStaff = FirebaseDatabase.getInstance().getReference("staff")
+        staffList = mutableListOf()
+
+        refStaff.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()) {
+                    staffList.clear()
+                    for (s in snapshot.children) {
+                        val staff = s.getValue(Staff::class.java)
+                        if (staff != null) {
+                            staffList.add(staff)
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
+        refAdmin = FirebaseDatabase.getInstance().getReference("admin")
+        adminList = mutableListOf()
+
+        refAdmin.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()) {
+                    adminList.clear()
+                    for (s in snapshot.children) {
+                        val admin = s.getValue(Admin::class.java)
+                        if (admin != null) {
+                            adminList.add(admin)
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
@@ -54,15 +107,50 @@ class LoginFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private fun login() {
-        if(level.equals("Staff")) {
-            var ref: DatabaseReference = FirebaseDatabase.getInstance().getReference("staff")
+        var username = edtUsername.text.toString()
+        var password = edtPassword.text.toString()
 
-            findNavController().navigate(R.id.action_loginFragment_to_staffHome)
+        if(username.isEmpty() or password.isEmpty()) {
+            Toast.makeText(context, "Username atau Password kosong", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+        var id = ""
+
+        if(level.equals("Staff")) {
+            for (staff in staffList) {
+                if(username.equals(staff.username) and password.equals(staff.password)) {
+                    id = staff.id_staff
+                    break
+                }
+            }
+            if(id.isEmpty()) {
+                Toast.makeText(context, "Username atau Password salah", Toast.LENGTH_SHORT)
+                    .show()
+                return
+            }
+            else {
+                val bundle = bundleOf("idStaff" to id)
+                findNavController().navigate(R.id.action_loginFragment_to_staffHome, bundle)
+                return
+            }
         }
         else if(level.equals("Admin")){
-            var ref: DatabaseReference = FirebaseDatabase.getInstance().getReference("admin")
-
-            findNavController().navigate(R.id.action_loginFragment_to_adminHome)
+            for (admin in adminList) {
+                if(username.equals(admin.username) and password.equals(admin.password)) {
+                    id = admin.id_admin
+                    break
+                }
+            }
+            if(id.isEmpty()) {
+                Toast.makeText(context, "Username atau Password salah", Toast.LENGTH_SHORT)
+                    .show()
+                return
+            }
+            else {
+                findNavController().navigate(R.id.action_loginFragment_to_adminHome)
+                return
+            }
         }
     }
 }
