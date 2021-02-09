@@ -11,8 +11,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_staff_berita_input.view.*
@@ -30,6 +29,7 @@ class StaffBeritaInputFragment(val idStaff: String) : Fragment() {
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
     private lateinit var randomKey: String
+    private lateinit var staffList: MutableList<Staff>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +51,27 @@ class StaffBeritaInputFragment(val idStaff: String) : Fragment() {
         view.btn_tambah_berita.setOnClickListener{
             uploadGambar()
         }
+
+        val refStaff: DatabaseReference = FirebaseDatabase.getInstance().getReference("staff")
+        staffList = mutableListOf()
+        refStaff.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()) {
+                    staffList.clear()
+                    for (s in snapshot.children) {
+                        val staff = s.getValue(Staff::class.java)
+                        if (staff != null) {
+                            staffList.add(staff)
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
         return view
     }
 
@@ -116,12 +137,22 @@ class StaffBeritaInputFragment(val idStaff: String) : Fragment() {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)
+        val idSekolah = getNamaSekolah(idStaff)
 
         val id_berita = ref.push().key
-        val berita = Berita(id_berita!!, nama_berita, isi, formatted, randomKey)
+        val berita = Berita(id_berita!!, nama_berita, isi, formatted, randomKey, idSekolah, idStaff)
         ref.child(id_berita).setValue(berita).addOnCompleteListener {
             Toast.makeText(context, "Data berhasil ditambahkan", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
                 .show()
         }
+    }
+
+    private fun getNamaSekolah(idStaff: String): String {
+        for (staff in staffList) {
+            if (staff.id_staff.equals(idStaff)) {
+                return staff.id_sekolah
+            }
+        }
+        return ""
     }
 }

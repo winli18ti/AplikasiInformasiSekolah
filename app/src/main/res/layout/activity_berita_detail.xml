@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GuestBeritaDetailFragment">
+    tools:context=".BeritaDetailActivity">
 
     <TextView
         android:id="@+id/txt_judul_berita_detail"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/txt_nama_staf_detail"
+        android:id="@+id/txt_nama_staff_berita_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -39,13 +39,23 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        android:id="@+id/txt_nama_sekolah_berita_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/nama_staf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nama_staff_berita_detail"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
         android:id="@+id/txt_waktu_berita_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/waktu_berita"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nama_staf_detail"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nama_sekolah_berita_detail"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView

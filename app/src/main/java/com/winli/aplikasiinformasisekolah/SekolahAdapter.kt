@@ -1,6 +1,7 @@
 package com.winli.aplikasiinformasisekolah
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
@@ -30,8 +31,8 @@ class SekolahAdapter(
 
         val sekolah = sekolahList[position]
 
-        nama_sekolah.text = "Nama : " + sekolah.nama_sekolah
-        keterangan.text = "Keterangan : " + sekolah.keterangan
+        nama_sekolah.text = sekolah.nama_sekolah
+        keterangan.text = sekolah.keterangan
         x.text = "x : "+ sekolah.x
         y.text = "y : "+sekolah.y
 
@@ -45,6 +46,18 @@ class SekolahAdapter(
             .addOnFailureListener { exception ->
                 Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show()
             }
+
+        view.setOnClickListener {
+            val i = Intent(context, SekolahDetailActivity::class.java)
+            i.putExtra("id_sekolah", sekolah.id_sekolah)
+            i.putExtra("nama_sekolah", sekolah.nama_sekolah)
+            i.putExtra("gambar_sekolah", sekolah.gambar_sekolah)
+            i.putExtra("keterangan", sekolah.keterangan)
+            i.putExtra("x", sekolah.x)
+            i.putExtra("y", sekolah.y)
+            context.startActivity(i)
+        }
+
         return view
     }
 }

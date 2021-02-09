@@ -105,7 +105,6 @@ class AdminTambahStaffFragment : Fragment(), AdapterView.OnItemSelectedListener 
     }
 
     private fun getIdSekolah(namaSekolah: String): String {
-        Toast.makeText(context, "Nama Sekolah yang Dipilih : " + namaSekolah, Toast.LENGTH_SHORT).show()
         var id: String = ""
         for(sekolah in sekolahList) {
             if(sekolah.nama_sekolah.equals(namaSekolah)) {
