@@ -17,7 +17,8 @@ import java.io.File
 class BeritaAdapter(
     val beritaContext: Context,
     val layoutResId: Int,
-    val beritaList: List<Berita>
+    val beritaList: List<Berita>,
+    val level: String
 ): ArrayAdapter<Berita>(beritaContext, layoutResId, beritaList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -46,16 +47,18 @@ class BeritaAdapter(
                 Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show()
             }
 
-        view.setOnClickListener {
-            val i = Intent(context, BeritaDetailActivity::class.java)
-            i.putExtra("id_berita", berita.id_berita)
-            i.putExtra("judul_berita", berita.judul_berita)
-            i.putExtra("gambar_berita", berita.gambar_berita)
-            i.putExtra("waktu_berita", berita.waktu_berita)
-            i.putExtra("isi_berita", berita.isi_berita)
-            i.putExtra("id_sekolah", berita.id_sekolah)
-            i.putExtra("id_staff", berita.id_staff)
-            context.startActivity(i)
+        if (level.equals("Guest")) {
+            view.setOnClickListener {
+                val i = Intent(context, BeritaDetailActivity::class.java)
+                i.putExtra("id_berita", berita.id_berita)
+                i.putExtra("judul_berita", berita.judul_berita)
+                i.putExtra("gambar_berita", berita.gambar_berita)
+                i.putExtra("waktu_berita", berita.waktu_berita)
+                i.putExtra("isi_berita", berita.isi_berita)
+                i.putExtra("id_sekolah", berita.id_sekolah)
+                i.putExtra("id_staff", berita.id_staff)
+                context.startActivity(i)
+            }
         }
 
         return view

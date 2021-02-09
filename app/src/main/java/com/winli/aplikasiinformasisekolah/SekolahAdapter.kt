@@ -16,7 +16,8 @@ import java.io.File
 class SekolahAdapter(
     val sekolahContext: Context,
     val layoutResId: Int,
-    val sekolahList: List<Sekolah>
+    val sekolahList: List<Sekolah>,
+    val level: String
 ): ArrayAdapter<Sekolah>(sekolahContext, layoutResId, sekolahList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -33,8 +34,8 @@ class SekolahAdapter(
 
         nama_sekolah.text = sekolah.nama_sekolah
         keterangan.text = sekolah.keterangan
-        x.text = "x : "+ sekolah.x
-        y.text = "y : "+sekolah.y
+        x.text = "Latitude : "+ sekolah.x
+        y.text = "Longitude : "+sekolah.y
 
         var storageReference = FirebaseStorage.getInstance().getReference().child("sekolah/"+sekolah.gambar_sekolah)
         var localFile = File.createTempFile(sekolah.gambar_sekolah, "jpeg")
@@ -47,15 +48,17 @@ class SekolahAdapter(
                 Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show()
             }
 
-        view.setOnClickListener {
-            val i = Intent(context, SekolahDetailActivity::class.java)
-            i.putExtra("id_sekolah", sekolah.id_sekolah)
-            i.putExtra("nama_sekolah", sekolah.nama_sekolah)
-            i.putExtra("gambar_sekolah", sekolah.gambar_sekolah)
-            i.putExtra("keterangan", sekolah.keterangan)
-            i.putExtra("x", sekolah.x)
-            i.putExtra("y", sekolah.y)
-            context.startActivity(i)
+        if (level.equals("Guest")) {
+            view.setOnClickListener {
+                val i = Intent(context, SekolahDetailActivity::class.java)
+                i.putExtra("id_sekolah", sekolah.id_sekolah)
+                i.putExtra("nama_sekolah", sekolah.nama_sekolah)
+                i.putExtra("gambar_sekolah", sekolah.gambar_sekolah)
+                i.putExtra("keterangan", sekolah.keterangan)
+                i.putExtra("x", sekolah.x)
+                i.putExtra("y", sekolah.y)
+                context.startActivity(i)
+            }
         }
 
         return view

@@ -23,7 +23,7 @@ class AdminAdminFragment : Fragment() {
         listData = view.findViewById(R.id.list_admin)
         adminList = mutableListOf()
 
-        ref.addValueEventListener(object: ValueEventListener {
+        ref.orderByChild("username").addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
                     adminList.clear()
