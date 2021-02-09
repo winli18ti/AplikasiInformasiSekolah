@@ -23,7 +23,7 @@ class AdminSekolahFragment : Fragment() {
         listData = view.findViewById(R.id.list_sekolah)
         sekolahList = mutableListOf()
 
-        ref.addValueEventListener(object: ValueEventListener {
+        ref.orderByChild("nama_sekolah").addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
                     sekolahList.clear()
@@ -37,7 +37,9 @@ class AdminSekolahFragment : Fragment() {
                     val adapter = context?.let {
                         SekolahAdapter(
                             it,
-                            R.layout.layout_list_sekolah, sekolahList)
+                            R.layout.layout_list_sekolah,
+                            sekolahList,
+                            "Admin")
                     }
                     listData.adapter = adapter
                 }

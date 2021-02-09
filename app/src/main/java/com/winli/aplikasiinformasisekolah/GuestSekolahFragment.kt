@@ -26,7 +26,7 @@ class GuestSekolahFragment : Fragment() {
         sekolahList = mutableListOf()
 
         var ref: DatabaseReference = FirebaseDatabase.getInstance().getReference("sekolah")
-        ref.addValueEventListener(object: ValueEventListener {
+        ref.orderByChild("nama_sekolah").addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
                     sekolahList.clear()
@@ -40,7 +40,9 @@ class GuestSekolahFragment : Fragment() {
                     val adapter = context?.let {
                         SekolahAdapter(
                             it,
-                            R.layout.layout_list_sekolah, sekolahList)
+                            R.layout.layout_list_sekolah,
+                            sekolahList,
+                            "Guest")
                     }
                     listData.adapter = adapter
                 }
@@ -76,7 +78,9 @@ class GuestSekolahFragment : Fragment() {
                     val adapter = context?.let {
                         SekolahAdapter(
                             it,
-                            R.layout.layout_list_sekolah, sekolahList)
+                            R.layout.layout_list_sekolah,
+                            sekolahList,
+                            "Guest")
                     }
                     listData.adapter = adapter
                 }

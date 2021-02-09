@@ -26,7 +26,7 @@ class StaffAdapter(
         nama_staff.text = "Nama : " + staff.nama_staff
         username.text = "Username : " + staff.username
         password.text = "Password : " + staff.password
-        id_sekolah.text = "Id Sekolah : " + staff.id_sekolah
+        //id_sekolah.text = staff.id_sekolah
 
         return view
     }

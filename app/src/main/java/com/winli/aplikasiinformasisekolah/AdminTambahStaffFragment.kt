@@ -43,7 +43,7 @@ class AdminTambahStaffFragment : Fragment(), AdapterView.OnItemSelectedListener 
         sekolahList = mutableListOf()
         namaSekolahList = mutableListOf()
 
-        ref.addValueEventListener(object: ValueEventListener{
+        ref.orderByChild("nama_sekolah").addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists())
                 {
@@ -105,7 +105,7 @@ class AdminTambahStaffFragment : Fragment(), AdapterView.OnItemSelectedListener 
     }
 
     private fun getIdSekolah(namaSekolah: String): String {
-        var id: String = ""
+        var id = ""
         for(sekolah in sekolahList) {
             if(sekolah.nama_sekolah.equals(namaSekolah)) {
                 id = sekolah.id_sekolah

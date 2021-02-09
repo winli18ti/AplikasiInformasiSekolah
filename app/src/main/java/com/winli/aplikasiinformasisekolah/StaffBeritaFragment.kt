@@ -30,7 +30,7 @@ class StaffBeritaFragment(val idStaff: String) : Fragment() {
                     beritaList.clear()
                     for (s in snapshot.children) {
                         val berita = s.getValue(Berita::class.java)
-                        if (berita != null) {
+                        if (berita != null && berita.id_staff.equals(idStaff)) {
                             beritaList.add(berita)
                         }
                     }
@@ -38,7 +38,9 @@ class StaffBeritaFragment(val idStaff: String) : Fragment() {
                     val adapter = context?.let {
                         BeritaAdapter(
                             it,
-                            R.layout.layout_list_berita, beritaList)
+                            R.layout.layout_list_berita,
+                            beritaList.reversed(),
+                            "Staff")
                     }
                     listData.adapter = adapter
                 }

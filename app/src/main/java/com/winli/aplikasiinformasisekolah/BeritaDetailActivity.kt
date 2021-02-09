@@ -12,18 +12,21 @@ import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 
 class BeritaDetailActivity: AppCompatActivity() {
+    private lateinit var staffList: MutableList<Staff>
+    private lateinit var sekolahList: MutableList<Sekolah>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_berita_detail)
         val extras = intent.extras
 
         val id_berita = extras!!.getString("id_berita")
-        val judul_berita = extras!!.getString("judul_berita")
-        val gambar_berita = extras!!.getString("gambar_berita")
-        val waktu_berita = extras!!.getString("waktu_berita")
-        val isi_berita = extras!!.getString("isi_berita")
-        val id_sekolah = extras!!.getString("id_sekolah")
-        val id_staff = extras!!.getString("id_staff")
+        val judul_berita = extras.getString("judul_berita")
+        val gambar_berita = extras.getString("gambar_berita")
+        val waktu_berita = extras.getString("waktu_berita")
+        val isi_berita = extras.getString("isi_berita")
+        val id_sekolah = extras.getString("id_sekolah")
+        val id_staff = extras.getString("id_staff")
 
         val img_berita_detail = findViewById<ImageView>(R.id.img_berita_detail)
 
@@ -48,14 +51,16 @@ class BeritaDetailActivity: AppCompatActivity() {
         txt_waktu_berita_detail.text = waktu_berita
 
         val refStaff: DatabaseReference = FirebaseDatabase.getInstance().getReference("staff")
-        var nama_staff = ""
+        staffList = mutableListOf()
         refStaff.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
+                    staffList.clear()
                     for (s in snapshot.children) {
                         val staff = s.getValue(Staff::class.java)
-                        if (staff != null && staff.id_staff.equals(id_staff)) {
-                            nama_staff = staff.nama_staff
+                        if (staff != null) {
+                            staffList.add(staff)
+                            //nama_staff = staff.nama_staff
                         }
                     }
                 }
@@ -66,15 +71,24 @@ class BeritaDetailActivity: AppCompatActivity() {
             }
         })
 
+        var nama_staff = ""
+        for (staff in staffList) {
+            if (staff.id_staff.equals(id_staff)) {
+                nama_staff = staff.nama_staff
+            }
+        }
+
         val refSekolah: DatabaseReference = FirebaseDatabase.getInstance().getReference("sekolah")
-        var nama_sekolah = ""
+        sekolahList = mutableListOf()
         refSekolah.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()) {
+                    sekolahList.clear()
                     for (s in snapshot.children) {
                         val sekolah = s.getValue(Sekolah::class.java)
-                        if (sekolah != null && sekolah.id_sekolah.equals(id_sekolah)) {
-                            nama_sekolah = sekolah.nama_sekolah
+                        if (sekolah != null) {
+                            sekolahList.add(sekolah)
+                            //nama_sekolah = sekolah.nama_sekolah
                         }
                     }
                 }
@@ -84,6 +98,13 @@ class BeritaDetailActivity: AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
+
+        var nama_sekolah = ""
+        for (sekolah in sekolahList) {
+            if (sekolah.id_sekolah.equals(id_sekolah)) {
+                nama_sekolah = sekolah.nama_sekolah
+            }
+        }
 
         txt_nama_staff_berita_detail.text = nama_staff
         txt_nama_sekolah_berita_detail.text = nama_sekolah

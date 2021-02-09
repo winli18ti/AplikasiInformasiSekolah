@@ -37,7 +37,9 @@ class GuestBeritaFragment : Fragment() {
                     val adapter = context?.let {
                         BeritaAdapter(
                             it,
-                            R.layout.layout_list_berita, beritaList)
+                            R.layout.layout_list_berita,
+                            beritaList.reversed(),
+                            "Guest")
                     }
                     listData.adapter = adapter
                 }
