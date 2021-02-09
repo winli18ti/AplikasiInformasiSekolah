@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_list"
+    android:background="@color/colorPrimary"
     tools:context=".AdminSekolahFragment">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Daftar Sekolah"
-        android:layout_margin="15dp"
+        android:layout_margin="25dp"
         android:textSize="25sp"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/list_sekolah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:dividerHeight="4dp"
         app:layout_constraintTop_toBottomOf="@+id/txt_admin_sekolah"
         app:layout_constraintStart_toStartOf="parent"

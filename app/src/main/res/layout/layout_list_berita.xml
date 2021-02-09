@@ -6,25 +6,28 @@
         android:id="@+id/item_berita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_staff_list"
+        android:background="@drawable/edit_background_guest_list"
         android:focusable="true"
         android:foreground="?selectableItemBackground">
 
-        <ImageView
-            android:id="@+id/img_berita"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/img_berita"
+        android:layout_width="101dp"
+        android:layout_height="77dp"
+        android:layout_margin="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_judul_berita"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingTop="10dp"
             android:text="@string/judul_berita"
-            android:textColor="#E6E6E6"
+            android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/img_berita"
@@ -35,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textColor="#E6E6E6"
+            android:textColor="@android:color/white"
             android:text="@string/waktu_berita"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/img_berita"
@@ -46,8 +49,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textColor="#E6E6E6"
+            android:textColor="@android:color/white"
             android:textSize="12sp"
+            android:paddingBottom="15dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/isi_berita"
             app:layout_constraintStart_toEndOf="@+id/img_berita"
             app:layout_constraintTop_toBottomOf="@+id/txt_waktu_berita"/>

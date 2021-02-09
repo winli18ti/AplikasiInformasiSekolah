@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
-        android:background="@drawable/shape_list"
+        android:background="@drawable/edit_background_guest_list"
         android:foreground="?selectableItemBackground">
 
         <ImageView
@@ -16,6 +16,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -23,24 +25,26 @@
             android:id="@+id/txt_nama_sekolah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
             android:text="@string/nama_sekolah"
             android:textStyle="bold"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/img_sekolah"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/txt_isi_sekolah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="15dp"
-            android:textColor="#2E2E2E"
-            android:text="@string/isi_sekolah"
-            app:layout_constraintStart_toEndOf="@+id/img_sekolah"
-            app:layout_constraintTop_toBottomOf="@+id/txt_nama_sekolah"/>
+    <TextView
+        android:id="@+id/txt_isi_sekolah"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/isi_sekolah"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:justificationMode="inter_word"
+        android:paddingRight="10dp"
+        app:layout_constraintStart_toEndOf="@+id/img_sekolah"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nama_sekolah" />
 
         <TextView
             android:id="@+id/txt_isi_x"
@@ -49,7 +53,7 @@
             android:layout_margin="10dp"
             android:text="@string/nama_sekolah"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/img_sekolah"
             app:layout_constraintTop_toBottomOf="@+id/txt_isi_sekolah"/>
 
@@ -58,9 +62,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingBottom="15dp"
             android:text="@string/nama_sekolah"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/img_sekolah"
             app:layout_constraintTop_toBottomOf="@+id/txt_isi_x"/>
 
