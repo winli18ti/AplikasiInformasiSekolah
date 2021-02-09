@@ -11,42 +11,43 @@
         android:id="@+id/txt_guest_sekolah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/guest_sekolah"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
         android:layout_margin="10dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
         android:id="@+id/edt_cari_sekolah"
-        android:layout_width="280dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="277dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="0.5"
-        android:background="@android:color/black"
-        android:textColor="#FFF"
-        android:hint="Nama Sekolah"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/txt_guest_sekolah"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:background="@drawable/edit_background_guest"
+        android:inputType="text"
+        android:text=" Cari Sekolah .... "
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_guest_sekolah" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_cari_sekolah"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="99dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         android:layout_weight="0.5"
-        android:backgroundTint="#000"
-        android:text="Cari Sekolah"
-        android:textColor="#FFF"
-        android:textSize="13sp"
-        android:textStyle="bold"
+        android:backgroundTint="@android:color/white"
+        app:layout_constraintStart_toEndOf="@id/edt_cari_sekolah"
         app:layout_constraintTop_toBottomOf="@id/txt_guest_sekolah"
-        app:layout_constraintStart_toEndOf="@id/edt_cari_sekolah"/>
+        app:srcCompat="@drawable/ic_cari" />
 
     <ListView
         android:id="@+id/list_sekolah"

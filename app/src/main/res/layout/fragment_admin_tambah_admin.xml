@@ -109,7 +109,7 @@
             android:textSize="15dp"
             android:hint="Password"
             android:imeOptions="actionGo"
-            android:inputType="textCapWords"
+            android:inputType="textPassword"
             android:textColor="#363A43"
             android:textColorHint="#6E6E6E"
             app:layout_constraintEnd_toEndOf="parent"
