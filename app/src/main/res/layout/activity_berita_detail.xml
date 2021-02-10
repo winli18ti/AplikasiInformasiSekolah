@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_geust_detail"
     tools:context=".BeritaDetailActivity">
 
     <TextView
@@ -12,9 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/judul_berita"
-        android:textSize="25sp"
+        android:layout_marginTop="29dp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -24,6 +26,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_margin="10dp"
+        android:paddingTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_judul_berita_detail"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -33,7 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:paddingTop="30dp"
         android:text="@string/nama_staf"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_berita_detail"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -44,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/nama_staf"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nama_staff_berita_detail"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -54,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/waktu_berita"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nama_sekolah_berita_detail"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -64,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/isi_berita"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_waktu_berita_detail"
         app:layout_constraintEnd_toEndOf="parent"/>

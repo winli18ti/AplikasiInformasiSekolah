@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_guest_sekolah"
     tools:context=".GuestSekolahFragment">
 
 
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/guest_sekolah"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:layout_marginTop="15dp"
@@ -29,7 +30,7 @@
         android:layout_width="277dp"
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="40dp"
         android:layout_weight="0.5"
         android:background="@drawable/edit_background_guest"
         android:inputType="text"
@@ -46,7 +47,7 @@
         android:layout_width="99dp"
         android:layout_height="60dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="35dp"
         android:layout_weight="0.5"
         android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toEndOf="@id/edt_cari_sekolah"

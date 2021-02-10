@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_guest_berita"
     tools:context=".GuestBeritaFragment">
 
     <TextView
@@ -12,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/guest_berita"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:layout_margin="10dp"
@@ -52,9 +52,9 @@
         android:id="@+id/list_berita_guest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_berita_sekolah"
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_berita_sekolah"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
