@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_list"
+    android:background="@color/colorPrimary"
     tools:context=".AdminStaffFragment">
 
     <TextView
@@ -24,7 +24,7 @@
         android:id="@+id/list_staff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:dividerHeight="4dp"
         android:paddingRight="5dp"
         android:layout_marginLeft="5dp"

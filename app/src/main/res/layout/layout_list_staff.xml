@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
-        android:background="@drawable/shape_list"
+        android:background="@drawable/edit_background_guest_list"
         android:foreground="?selectableItemBackground">
 
         <TextView
@@ -16,9 +16,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Nama Staff"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:textStyle="bold"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -27,9 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:text="Username"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_nama_staff"/>
 
@@ -38,9 +42,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:text="Password"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_username_staff"/>
 
@@ -49,9 +55,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:text="Username"
             android:textSize="15dp"
-            android:textColor="#2E2E2E"
+            android:textColor="@android:color/white"
             android:paddingBottom="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_password_staff"/>
