@@ -38,7 +38,7 @@
             android:layout_height="43dp"
             android:background="@drawable/button"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/submit"
+            android:text="Update"
             android:textColor="@android:color/white"
             android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +122,7 @@
         <ImageView
             android:id="@+id/img_ubah_gambar_sekolah"
             android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:layout_marginStart="60dp"
             android:contentDescription="Gambar Sekolah"
             app:layout_constraintStart_toStartOf="parent"

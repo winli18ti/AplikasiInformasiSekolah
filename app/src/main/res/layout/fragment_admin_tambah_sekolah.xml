@@ -38,7 +38,7 @@
             android:layout_height="43dp"
             android:background="@drawable/button"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/submit"
+            android:text="Tambah"
             android:textColor="@android:color/white"
             android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -121,12 +121,12 @@
 
         <ImageView
             android:id="@+id/img_gambar_sekolah"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_width="144dp"
+            android:layout_height="88dp"
             android:layout_marginStart="60dp"
             android:contentDescription="Gambar Sekolah"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_koordinat_y"/>
+            app:layout_constraintTop_toBottomOf="@+id/et_koordinat_y" />
 
         <Button
             android:id="@+id/btn_upload_gambar_sekolah"

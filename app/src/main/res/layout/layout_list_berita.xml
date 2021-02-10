@@ -22,11 +22,14 @@
 
         <TextView
             android:id="@+id/txt_judul_berita"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:paddingTop="10dp"
             android:text="@string/judul_berita"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="20dp"
+            android:paddingRight="30dp"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="14sp"
@@ -38,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:justificationMode="inter_word"
             android:textColor="@android:color/white"
             android:text="@string/waktu_berita"
             android:textSize="12sp"
@@ -46,9 +50,11 @@
 
         <TextView
             android:id="@+id/txt_isi_berita"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:justificationMode="inter_word"
+            android:paddingRight="30dp"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:ellipsize="end"

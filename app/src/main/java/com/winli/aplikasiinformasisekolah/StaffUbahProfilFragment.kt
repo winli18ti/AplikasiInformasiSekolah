@@ -38,6 +38,7 @@ class StaffUbahProfilFragment(val idStaff: String) : Fragment() {
     private lateinit var randomKey: String
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
+    private var changeGambar: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -152,10 +153,33 @@ class StaffUbahProfilFragment(val idStaff: String) : Fragment() {
         if (data != null) {
             imageUri = data.getData()!!
             imgGambar.setImageURI(imageUri)
+            changeGambar = true
         }
     }
 
     private fun uploadGambar() {
+        if(!changeGambar) {
+            var ref: DatabaseReference = FirebaseDatabase.getInstance().getReference("sekolah")
+
+            val nama_sekolah = edtNamaSekolah.text.toString().trim()
+            val keterangan = edtKeterangan.text.toString()
+            val koordinatX = edtKoordinatX.text.toString()
+            val koordinatY = edtKoordinatY.text.toString()
+
+            if (nama_sekolah.isEmpty() or keterangan.isEmpty() or koordinatX.isEmpty() or koordinatY.isEmpty()) {
+                Toast.makeText(context, "Data tidak boleh kosong", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
+                    .show()
+                return
+            }
+
+            val sekolah = Sekolah(idSekolah, nama_sekolah, dataSekolah.gambar_sekolah, keterangan, koordinatX, koordinatY)
+            ref.child(idSekolah).setValue(sekolah).addOnCompleteListener {
+                Toast.makeText(context, "Data berhasil diupdate", Toast.LENGTH_SHORT) //getActivity() atau getApplicationContext()
+                    .show()
+            }
+            return
+        }
+
         val gambar = imgGambar.drawable == null
         if(gambar) {
             Toast.makeText(context, "Gambar belum dipilih", Toast.LENGTH_SHORT).show()

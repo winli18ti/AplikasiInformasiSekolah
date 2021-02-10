@@ -23,17 +23,16 @@
             android:layout_width="316dp"
             android:layout_height="43dp"
             android:background="@drawable/button"
-            android:text="@string/submit"
+            android:text="Tambah"
             android:textColor="@android:color/white"
             android:textSize="17dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.387"
+            app:layout_constraintHorizontal_bias="0.672"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.938" />
-
+            app:layout_constraintVertical_bias="0.935" />
 
         <EditText
             android:id="@+id/edt_nama_staff"
