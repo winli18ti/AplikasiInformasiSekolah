@@ -34,8 +34,6 @@ class SekolahAdapter(
 
         nama_sekolah.text = sekolah.nama_sekolah
         keterangan.text = sekolah.keterangan
-        x.text = "Latitude : "+ sekolah.x
-        y.text = "Longitude : "+sekolah.y
 
         var storageReference = FirebaseStorage.getInstance().getReference().child("sekolah/"+sekolah.gambar_sekolah)
         var localFile = File.createTempFile(sekolah.gambar_sekolah, "jpeg")
@@ -59,6 +57,10 @@ class SekolahAdapter(
                 i.putExtra("y", sekolah.y)
                 context.startActivity(i)
             }
+        }
+        else {
+            x.text = "Latitude : " + sekolah.x
+            y.text = "Longitude : " + sekolah.y
         }
 
         return view

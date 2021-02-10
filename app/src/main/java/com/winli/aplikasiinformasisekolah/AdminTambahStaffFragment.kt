@@ -39,6 +39,7 @@ class AdminTambahStaffFragment : Fragment(), AdapterView.OnItemSelectedListener 
         }
 
         spinners = view?.findViewById(R.id.spinner_tambah_staff)
+        spinners?.onItemSelectedListener = this
         ref = FirebaseDatabase.getInstance().getReference("sekolah")
         sekolahList = mutableListOf()
         namaSekolahList = mutableListOf()

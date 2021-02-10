@@ -1,6 +1,5 @@
 package com.winli.aplikasiinformasisekolah
 
-import android.app.Activity.RESULT_OK
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
@@ -11,14 +10,11 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.OnProgressListener
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.fragment_admin_tambah_sekolah.view.*
 import java.util.*
 
@@ -31,9 +27,10 @@ class AdminTambahSekolahFragment : Fragment() {
     private lateinit var etKoordinaty: EditText
     private lateinit var imgGambarSekolah: ImageView
     private lateinit var imageUri: Uri
+    private lateinit var randomKey: String
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
-    private lateinit var randomKey: String
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
