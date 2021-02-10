@@ -5,7 +5,7 @@ data class Staff(
     val nama_staff: String,
     val username: String,
     val password: String,
-    val id_sekolah: String
+    var id_sekolah: String
 ){
     constructor(): this("","","","","")
 }
