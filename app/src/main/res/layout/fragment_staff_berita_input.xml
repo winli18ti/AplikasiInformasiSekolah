@@ -24,7 +24,7 @@
             android:layout_height="45dp"
             android:background="@drawable/button"
             android:backgroundTint="@color/birutua"
-            android:text="@string/submit"
+            android:text="Tambah"
             android:textColor="@android:color/white"
             android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"

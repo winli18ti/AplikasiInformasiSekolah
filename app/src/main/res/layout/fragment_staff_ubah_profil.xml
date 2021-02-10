@@ -70,7 +70,7 @@
         <EditText
             android:id="@+id/edt_ubah_keterangan"
             android:layout_width="284dp"
-            android:layout_height="52dp"
+            android:layout_height="80dp"
             android:layout_marginTop="124dp"
             android:gravity="bottom"
             android:hint="Keterangan"
@@ -89,11 +89,11 @@
             android:id="@+id/edt_ubah_koordinat_x"
             android:layout_width="280dp"
             android:layout_height="58dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:hint="Koordinat X"
             android:textSize="15dp"
             android:imeOptions="actionGo"
-            android:inputType="textCapWords"
+            android:inputType="numberDecimal"
             android:textColor="@android:color/black"
             android:textColorHint="#6E6E6E"
             android:backgroundTint="@android:color/black"
@@ -110,7 +110,7 @@
             android:hint="Koordinat Y"
             android:textSize="15dp"
             android:imeOptions="actionGo"
-            android:inputType="textCapWords"
+            android:inputType="numberDecimal"
             android:textColor="@android:color/black"
             android:textColorHint="#6E6E6E"
             android:backgroundTint="@android:color/black"
@@ -121,12 +121,12 @@
 
         <ImageView
             android:id="@+id/img_ubah_gambar_sekolah"
-            android:layout_width="150dp"
-            android:layout_height="85dp"
+            android:layout_width="149dp"
+            android:layout_height="82dp"
             android:layout_marginStart="60dp"
             android:contentDescription="Gambar Sekolah"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_ubah_koordinat_y"/>
+            app:layout_constraintTop_toBottomOf="@+id/edt_ubah_koordinat_y" />
 
         <Button
             android:id="@+id/btn_ubah_gambar_sekolah"
@@ -145,7 +145,8 @@
             android:id="@+id/logo_school"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
             android:src="@drawable/ic_school"
             app:layout_constraintEnd_toStartOf="@+id/et_name"
             app:layout_constraintHorizontal_bias="0.551"
@@ -156,6 +157,7 @@
             android:id="@+id/logo_keterangan"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="84dp"
             android:src="@drawable/ic_list_staff"
             app:layout_constraintEnd_toStartOf="@+id/et_keterangan"

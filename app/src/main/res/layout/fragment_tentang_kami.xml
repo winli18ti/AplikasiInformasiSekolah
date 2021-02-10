@@ -45,6 +45,7 @@
         android:text="@string/isi_tentangkami"
         android:textColor="@android:color/black"
         android:textSize="16sp"
+        android:justificationMode="inter_word"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintLeft_toLeftOf="parent"
